@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>LIST_SV</title>
+</head>
+<body>
+    <table width="500" border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>EMAIL</td>
+            <td><a href="../sinhvien/them">THÊM</a></td>
+        </tr>
+
+        <%danhsach.rows.forEach(function(sv){ %>
+        <tr>
+            <td><%= sv.id %></td>
+            <td><%= sv.name %></td>
+            <td><%= sv.email %></td>
+            <td>
+               <a href="../sinhvien/sua/<%= sv.id %>"><i class="fas fa-user-edit"></i></a> 
+                /
+                <a href="../sinhvien/xoa/<%= sv.id %>"><i class="fas fa-user-slash"></i></a> 
+            </td>
+        </tr>
+        <%}); %>
+    </table>
+</body>
+</html>
